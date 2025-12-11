@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Product>
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Product Added </title>
+    </head>
+    <body>
+    <h1>Product Added Successfully </h1>
+    <h1>now you will be directed to your cart </h1>
+    <meta http-equiv="refresh" content="4;url=/Home/AllProducts" />
+
+
+    <h2>Your product Product List</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.ProductId</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.ProductDescription</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    </body>
+    </html>

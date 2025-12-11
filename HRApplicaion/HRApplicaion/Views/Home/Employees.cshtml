@@ -1,0 +1,45 @@
+﻿@model HRApplication.Models.Employee
+
+
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+    <form asp-action="Employees" method="post">
+     
+        <h1>Employee Form</h1>
+        <div>
+            <label aps-for="EmployeeName">Employee Name</label>
+            <input asp-for="EmployeeName">
+        </div>
+        <div>
+            <label asp-for="Department">Departement</label>
+            <select asp-for="Department">
+                <option></option>
+                <option value="IT">Information Technology</option>
+                <option value="FCRM">Fraud Monitoring</option>
+                <option value="Ope">Operations</option>
+                <option></option>
+
+
+            </select>
+
+        </div>
+        <div>
+
+
+            <label asp-for="isActive">isActive?</label>
+            <input type="checkbox" asp-for="isActive">
+
+        </div>
+        <button type="submit">Save</button>
+
+    </form>
+
+
+
+    </body>
+    </html>

@@ -1,0 +1,77 @@
+﻿@model WebApplication3.Models.Product
+
+<!doctype html>
+<html lang="en">
+<head>
+
+    <title>Add Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            margin-top: 14px;
+            padding: 10px 16px;
+            border: 0;
+            background: #0b76d1;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+            .btn:disabled {
+                background: #9bbcd9;
+                cursor: not-allowed;
+            }
+    </style>
+</head>
+<body>
+
+    <h2>Add Product</h2>
+
+    <form asp-for="addProduct" method="post">
+       
+        <label asp-for="ProductName">Product Name</label>
+        <input asp-for="ProductName" type="text" maxlength="200" required />
+
+        <label asp-for="ProductDescription">Product Description</label>
+        <textarea asp-for="ProductDescription" rows="5" maxlength="2000" required></textarea>
+
+   
+        <button type="submit" class="btn">Save</button>
+    </form>
+
+    <script>
+        // خفيف: يمنع إرسال النموذج إذا الحقول فارغة (HTML required يكفي عادة)
+        document.getElementById('addProductForm').addEventListener('submit', function(e){
+          // يمكنك إضافة تحقق إضافي هنا قبل الإرسال
+          // example: trim and ensure name length
+          var name = document.getElementById('productName').value.trim();
+          if (!name) {
+            e.preventDefault();
+            alert('Please enter product name.');
+            document.getElementById('productName').focus();
+          }
+        });
+    </script>
+
+</body>
+</html>
+
