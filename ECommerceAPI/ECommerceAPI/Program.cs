@@ -8,6 +8,7 @@ using Microex.Swagger.SwaggerGen.Application;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using ECommerceAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -214,6 +215,10 @@ app.MapDelete("/Product/{id}",async(ECommerceMAPIDbContext context , int id) =>
 });
 
 app.MapProductEndpoints();
+
+app.MapBrandEndpoints();
+
+app.MapCategoryEndpoints();
 
 
 

@@ -3,7 +3,7 @@ using ECommerceMAPI.Data.Data;
 using EcommerceCAPI.Data.Data;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.OpenApi;
-namespace ECommerceAPI.EndPoints;
+namespace ECommerceAPI;
 
 public static class CategoryEndpoints
 {
@@ -34,6 +34,8 @@ public static class CategoryEndpoints
                 .ExecuteUpdateAsync(setters => setters
                     .SetProperty(m => m.CategoryName, category.CategoryName)
                     .SetProperty(m => m.Description, category.Description)
+                    .SetProperty(m => m.MainImg, category.MainImg)
+                    .SetProperty(m => m.ImgPath, category.ImgPath)
                     .SetProperty(m => m.Id, category.Id)
                     .SetProperty(m => m.Status, category.Status)
                     );
