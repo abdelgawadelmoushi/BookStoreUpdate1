@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /ECommerceAPI/EcommerceCAPI/Configrations/ProductConfigration.cs
+/ElsayedElbadawyPharmacy/ElsayedElbadawyPharmacy/appsettings.json
